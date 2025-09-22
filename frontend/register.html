@@ -7,49 +7,125 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/register.css">
+  <style>
+    #errorMsg { color: red; font-size: 14px; display: none; margin-bottom: 10px; }
+    #successMsg { color: green; font-size: 14px; display: none; margin-bottom: 10px; }
+  </style>
 </head>
 <body>
   <header class="nav">
     <div class="nav-inner wrap" role="navigation" aria-label="Main navigation">
-      <div class="brand" aria-hidden="false">
+      <div class="brand">
         <img src="prashikshanamm.jpg" alt="Prashikshanam logo">
         <div>
           <div class="title">प्रशिक्षणम्</div>
           <div class="tiny">PM Internship Recommendation Portal</div>
         </div>
       </div>
-      <nav class="links" aria-label="Primary links">
-        <a href="index.html" data-lang-key="nav_home">Home</a>
-        <a href="index.html#about" data-lang-key="nav_about">About Us</a>
-        <a href="support.html" data-lang-key="nav_support">Support</a>
-        <a href="login.html" data-lang-key="nav_login">Login</a>
-        <a href="employee.html" data-lang-key="nav_admin">For employer ></a>
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="support.html">Support</a>
+        <a href="login.html">Login</a>
+        <a href="employee.html">For employer ></a>
       </nav>
       <div style="display:flex;gap:10px;align-items:center">
         <button class="cta" onclick="location.href='dashboard.html'">Explore Internships</button>
       </div>
     </div>
   </header>
+
   <main class="register-container">
     <div class="register-box">
       <h2>Create Your Account</h2>
       <h4>(Please fill all the entries below)</h4>
-      <form>
-        <input type="text" placeholder="Full Name" required >
+      <form id="registerForm">
+        <input type="text" placeholder="Full Name" required>
         <input type="email" placeholder="Email Address" required>
         <input type="text" placeholder="Username" required>
         <input type="number" placeholder="Phone number" required>
-        <input type="password" placeholder="Password" required>
-        <input type="password" placeholder="Confirm Password" required>
-        <button type="submit">Register </button>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        <p id="errorMsg"></p>
+        <p id="successMsg"></p>
+        <button type="button" onclick="registerUser()">Register</button>
       </form>
       <p>Already have an account? <a href="login.html">Login here</a></p>
     </div>
   </main>
+
   <footer>
     <div class="wrap">
       © 2025 PM Internship Recommendation Portal | Designed by Team Synapse
     </div>
   </footer>
+
+  <script>
+    const passwordField = document.getElementById("password");
+    const confirmPasswordField = document.getElementById("confirmPassword");
+    const errorMsg = document.getElementById("errorMsg");
+    const successMsg = document.getElementById("successMsg");
+
+    // Real-time password validation
+    confirmPasswordField.addEventListener("input", () => {
+      if (passwordField.value !== confirmPasswordField.value) {
+        errorMsg.textContent = "Passwords do not match!";
+        errorMsg.style.display = "block";
+        successMsg.style.display = "none";
+      } else {
+        errorMsg.style.display = "none";
+      }
+    });
+
+    async function registerUser() {
+      const form = document.getElementById("registerForm");
+      const fullname = form[0].value;
+      const email = form[1].value;
+      const username = form[2].value;
+      const phoneNo = form[3].value;
+      const password = passwordField.value;
+      const confirmPassword = confirmPasswordField.value;
+
+      // Validate passwords before sending API request
+      if (password !== confirmPassword) {
+        errorMsg.textContent = "Passwords do not match!";
+        errorMsg.style.display = "block";
+        successMsg.style.display = "none";
+        return;
+      }
+
+      const formData = { fullname, email, username, phoneNo, password };
+
+      try {
+        const response = await fetch("http://localhost:3000/api/v1/users/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          localStorage.setItem("userData", JSON.stringify(data));
+          successMsg.textContent = "Registration successful! Redirecting...";
+          successMsg.style.display = "block";
+          errorMsg.style.display = "none";
+
+          setTimeout(() => {
+            window.location.href = "dashboard.html";
+          }, 1500);
+        } else {
+          errorMsg.textContent = data.message || "Registration failed!";
+          errorMsg.style.display = "block";
+          successMsg.style.display = "none";
+        }
+      } catch (err) {
+        errorMsg.textContent = "Network error. Please try again.";
+        errorMsg.style.display = "block";
+        successMsg.style.display = "none";
+        console.error(err);
+      }
+    }
+  </script>
 </body>
 </html>

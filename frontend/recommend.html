@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended internship</title>
+    <link rel="stylesheet" href="css/recommend.css">
+</head>
+<body>
+    <div class="container">
+    <!-- Navbar -->
+    <header>
+      <div class="logo">
+        <div class="logo-icon">★</div>
+        <div>
+          <h1 style="margin:0;font-size:18px;">Prashikshanam</h1>
+          <p style="margin:0;font-size:12px;opacity:0.7;">AI Internship Recommendations</p>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="search-bar">
+          🔍 <input id="searchInput" placeholder="Search internships, companies, skills..."/>
+        </div>
+        
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <!-- Sidebar Filters -->
+      <aside>
+        <h3>Filters</h3>
+        <div class="filter-group">
+          📍 <input id="locationInput" placeholder="Location (e.g. Bengaluru)" style="width:80%;background:transparent;border:none;color:#f1f5f9;outline:none;"/>
+        </div>
+        <div class="filter-group between">
+          <label>Remote only</label>
+          <input type="checkbox" id="remoteOnly"/>
+        </div>
+        <div class="filter-group">
+          <label>Minimum match: <span id="minMatchLabel">50</span>%</label>
+          <input type="range" min="0" max="100" value="50" id="minMatch" style="width:100%;"/>
+        </div>
+        <div class="filter-group">
+          <label>Sort by</label>
+          <select id="sortSelect" style="width:100%;margin-top:6px;padding:6px;background:transparent;color:white;background-color:#122c4d ;border-radius:6px;">
+            <option value="relevance">Relevance</option>
+            <option value="stipend">Highest stipend</option>
+            <option value="deadline">Closest deadline</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- Content -->
+      <section>
+        <div class="between">
+          <h2 style="margin:0;">Top Recommendations</h2>
+          <div class="flex">
+            <div>Results: <span id="resultCount"></span></div>
+            <div class="flex">
+              <button id="listViewBtn" class="btn btn-outline">List</button>
+              <button id="mapViewBtn" class="btn btn-outline">Map</button>
+            </div>
+          </div>
+        </div>
+
+       
+        <div id="internshipList"></div>
+        <div id="mapView" style="display:none;text-align:center;padding:40px;opacity:0.7;">
+          <p>Map View</p>
+          <p style="font-size:12px;">(Placeholder — integrate Mapbox / Google Maps)</p>
+        </div>
+        <footer>
+          <div>Last synced: Sep 20, 2025</div>
+          <div class="flex">
+            <button class="btn btn-outline">Export CSV</button>
+            <button class="btn btn-primary">Apply to top match</button>
+          </div>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h3 id="modalTitle"></h3>
+      <p id="modalCompany"></p>
+      <p><b>Stipend:</b> <span id="modalStipend"></span></p>
+      <p><b>Deadline:</b> <span id="modalDeadline"></span></p>
+      <p><b>Skills:</b> <span id="modalSkills"></span></p>
+      <div class="flex" style="margin-top:12px;">
+        <button class="btn btn-primary">Apply</button>
+        <button class="btn btn-outline" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+  <script src="javascript/recommend.js
+  "></script>
+</body>
+</html>
