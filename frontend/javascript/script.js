@@ -62,10 +62,9 @@ let autoTest = setInterval(()=>{ cur=(cur+1)%total; updateTest(); }, 4500);
 function drawConnections(){
   const svg = document.querySelector('svg.connection');
   if(!svg) return;
-  // remove old
+  
   while(svg.firstChild) svg.removeChild(svg.firstChild);
   const boxes = Array.from(document.querySelectorAll('.step-box'));
-  // compute midpoints in svg coords
   const rect = svg.getBoundingClientRect();
   boxes.forEach((b,i)=>{
     if(i===boxes.length-1) return;
@@ -75,7 +74,6 @@ function drawConnections(){
     const y1 = a.top + a.height/2 - rect.top;
     const x2 = c.left + c.width/2 - rect.left;
     const y2 = c.top + c.height/2 - rect.top;
-    // control points for a nice curve
     const dx = (x2-x1)*0.5;
     const path = document.createElementNS('http://www.w3.org/2000/svg','path');
     const d = `M ${x1},${y1} C ${x1+dx},${y1-40} ${x2-dx},${y2+40} ${x2},${y2}`;
@@ -85,7 +83,6 @@ function drawConnections(){
     path.setAttribute('fill','none');
     path.setAttribute('stroke-linecap','round');
     path.setAttribute('marker-end','url(#arr)');
-    // dash animation
     path.style.strokeDasharray = path.getTotalLength();
     path.style.strokeDashoffset = path.getTotalLength();
     path.style.transition = 'stroke-dashoffset 1.3s ease-in-out';
@@ -99,39 +96,23 @@ const stepsObs = new IntersectionObserver(entries=>{
   });
 },{threshold:0.3});
 stepsObs.observe(document.querySelector('.steps-wrap'));
-
-/* =========================
-   Resize handler to redraw connections
-   ========================= */
 let resizeTO;
 window.addEventListener('resize', ()=>{
   clearTimeout(resizeTO);
   resizeTO = setTimeout(()=>drawConnections(), 300);
 });
 
-/* =========================
-   Modal handlers
-   ========================= */
 function openModal(){ document.getElementById('modal').style.display='grid'; }
 function closeModal(){ document.getElementById('modal').style.display='none'; }
-
-/* =========================
-   Light accessibility tweaks
-   ========================= */
 document.querySelectorAll('a,button').forEach(el=>{
   el.addEventListener('keydown', (e)=>{ if(e.key==='Enter') el.click(); });
 });
 
-/* =========================
-   Smooth scroll for nav
-   ========================= */
-/* =========================
-   Smooth scroll for nav (only for # links)
-   ========================= */
+
 document.querySelectorAll('nav.links a').forEach(a=>{
   a.addEventListener('click', (ev)=>{
     const href = a.getAttribute('href');
-    if(href.startsWith('#')) {  // only for same-page anchors
+    if(href.startsWith('#')) { 
       ev.preventDefault();
       const id = href.slice(1);
       const target = document.getElementById(id);
@@ -141,7 +122,50 @@ document.querySelectorAll('nav.links a').forEach(a=>{
 });
 
 
-/* =========================
-   SVG initial draw once images load
-   ========================= */
 window.addEventListener('load', ()=>{ setTimeout(drawConnections, 480); });
+
+
+
+// why prashikshanam
+
+
+ const cards = document.querySelectorAll(".cards-container1 .card1");
+        let currentCardIndex = 0;
+        let animationInterval;
+
+        function showNextCard() {
+            cards.forEach(card => {
+                card.classList.remove("active", "prev");
+            });
+            const previousCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+            cards[previousCardIndex].classList.add("prev");
+            cards[currentCardIndex].classList.add("active");
+            currentCardIndex = (currentCardIndex + 1) % cards.length;
+        }
+        function handleScroll() {
+            const section = document.getElementById("why");
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (sectionTop < windowHeight && sectionTop > -section.offsetHeight) {
+                if (!animationInterval) {
+                    showNextCard();
+                    animationInterval = setInterval(showNextCard, 2000);
+ }
+            } else {
+
+                clearInterval(animationInterval);
+                animationInterval = null;
+            }
+        }
+        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("DOMContentLoaded", handleScroll);
+
+
+
+
+
+
+
+
+
+
