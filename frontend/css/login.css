@@ -105,7 +105,7 @@ nav.links a:hover{color:white;background:linear-gradient(90deg, rgba(255,255,255
 }
 
 .login-box button {
-  width: 100%;
+  width: 80%;
   padding: 14px;
   border-radius: 12px;
   font-size: 16px;

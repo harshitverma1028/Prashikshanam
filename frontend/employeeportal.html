@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Form | PM Internship Portal</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/application.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Portal | PM Internship Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/employeeportal.css" />
 </head>
 <body>
+  <!-- Header -->
   <header class="nav">
     <div class="nav-inner wrap" role="navigation" aria-label="Main navigation">
-      <div class="brand" aria-hidden="false">
+      <div class="brand">
         <img src="images/prashikshanamm.jpg" alt="Prashikshanam logo">
         <div>
           <div class="title">प्रशिक्षणम्</div>
@@ -30,48 +31,57 @@
       </div>
     </div>
   </header>
+
+  <!-- Main Portal -->
   <main class="form-container">
-    <h2>Application Form</h2>
+    <h2>Welcome to Employee Portal !</h2>
     <form>
+      <div class="form-group">
+        <label for="title">Internship Title</label>
+        <input type="text" id="title" name="title" placeholder="Enter internship title" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Company Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter company name" required>
+      </div>
+
       <div class="form-group">
         <label for="location">Location</label>
         <select name="location" id="location" required style="background-color:#071526;">
-            <option value="">--Select preferred location--</option>
-            <option value="Ahmedabad">Ahmedabad</option>
-            <option value="Bhubaneshwar">Bhubaneshwar</option>
-            <option value="Chennai">Chennai</option>
-            <option value="Gurgaon">Gurgaon</option>
-            <option value="Hyderabad">Hyderabad</option>
-            <option value="Jaipur">Jaipur</option>
-            <option value="New Delhi">New Delhi</option>
-            <option value="Noida">Noida</option>
-            <option value="New Delhi">New Delhi</option>
-            <option value="Bangalore">Bangalore</option>
-            <option value="Mumbai">Mumbai</option>
-            <option value="Pune">Pune</option>
-            <option value="Vadodra">Vadodra</option>
-            <option value="Work from home">Work from home</option>
+          <option value="">--Select preferred location--</option>
+          <option value="Ahmedabad">Ahmedabad</option>
+          <option value="Bhubaneshwar">Bhubaneshwar</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Gurgaon">Gurgaon</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Jaipur">Jaipur</option>
+          <option value="New Delhi">New Delhi</option>
+          <option value="Noida">Noida</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Pune">Pune</option>
+          <option value="Vadodra">Vadodra</option>
+          <option value="Work from home">Work from home</option>
         </select>
       </div>
+
       <div class="form-group">
         <label for="startdate">Start Date</label>
-        <input type="date" id="startdate" name="startdate" style="background-color:#071526;">
+        <input type="date" id="startdate" name="startdate" required>
       </div>
+
       <div class="form-group">
         <label for="duration">Duration</label>
-        <input type="text" id="duration" name="duration" placeholder="e.g. 3 months" style="background-color:#071526;">
+        <input type="text" id="duration" name="duration" placeholder="e.g. 3 months" required>
       </div>
+
       <div class="form-group">
-        <label for="stipend">Select stipend range</label>
-        <select name="stipend" id="stipend" style="background-color:#071526;">
-          <option value="">--Select stipend range--</option>
-          <option value="5000-10,000">5000-10,000</option>
-          <option value="10,000-20,000">10,000-20,000</option>
-          <option value="20,000-30,000">20,000-30,000</option>
-          <option value="30,000-40,000">30,000-40,000</option>
-          <option value="40,000-50,000">40,000-50,000</option>
-        </select>
+        <label for="stipend">Select stipend value</label>
+        <input type="number" id="stipend" name="stipend" placeholder="Enter stipend value" required>
+        
       </div>
+
       <div class="form-group">
         <label for="education">Education</label>
         <select id="education" name="education" required style="background-color:#071526;">
@@ -83,9 +93,10 @@
           <option value="diploma">Diploma</option>
         </select>
       </div>
+
       <div class="form-group">
         <label for="skills">Skills</label>
-        <select id="skills" name="skills" style="background-color:#071526;">
+        <select id="skills" name="skills" required style="background-color:#071526;">
           <option value="">-- Select Skill --</option>
           <option value="webdev">Web Development</option>
           <option value="java">Java</option>
@@ -94,9 +105,10 @@
           <option value="cybersecurity">Cybersecurity</option>
         </select>
       </div>
+
       <div class="form-group">
         <label for="interest">Interest</label>
-        <select id="interest" name="interest" style="background-color:#071526;">
+        <select id="interest" name="interest" required style="background-color:#071526;">
           <option value="">-- Select Interest --</option>
           <option value="ai">Artificial Intelligence</option>
           <option value="ml">Machine Learning</option>
@@ -105,13 +117,33 @@
           <option value="iot">IoT</option>
         </select>
       </div>
-      <button type="submit" class="cta">Submit</button>
+
+      <button type="submit" class="cta">Update</button>
     </form>
+
+    <!-- Logout Button -->
+    <button class="logout-btn" onclick="logout()">Logout</button>
   </main>
+
+  <!-- Footer -->
   <footer>
     <div class="wrap">
       © 2025 PM Internship Recommendation Portal | Designed by Team Synapse
     </div>
   </footer>
+
+ 
+  <script>
+    // Check login status
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+      window.location.href = "employee.html";
+    }
+
+    // Logout function
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "employee.html";
+    }
+  </script>
 </body>
 </html>

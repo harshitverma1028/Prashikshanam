@@ -1,6 +1,4 @@
-/* =========================
-   Variables & reset
-   ========================= */
+
 :root{
   --bg:#071526;
   --glass: rgba(255,255,255,0.06);
@@ -29,9 +27,6 @@ body{
   flex-direction: column;
 }
 
-/* =========================
-   Layout
-   ========================= */
 .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
 header.nav{
   position:fixed;left:0;right:0;top:18px;z-index:50;
@@ -57,46 +52,41 @@ nav.links a:hover{color:white;background:linear-gradient(90deg, rgba(255,255,255
 .cta:hover{transform:translateY(-3px)}
 .tiny{font-size:13px;color:var(--muted);}
 
-/* =========================
-   Register Form
-   ========================= */
-.register-container {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
-}
-
-.register-box {
-  padding: 30px 40px;
+/*
+   Application Form*/
+.form-container {
+ width: 800px;
+  margin: 100px auto 40px;
+  padding: 30px;
   border-radius: 18px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-  backdrop-filter: blur(6px);
   border: 1px solid var(--glass-border);
   box-shadow: 0 18px 70px rgba(2, 6, 23, 0.7);
-  max-width: 440px;
-  width: 100%;
-  text-align: center;
 }
 
-.register-box h2 {
+.form-container h2 {
   font-family: Rubik, Inter;
   font-size: 26px;
   color: white;
   margin-bottom: 24px;
+  text-align: center;
 }
 
-.register-box h4 {
-  color: var(--muted);
-  font-size: 14px;
-  margin: -10px 0 20px;
+.form-group {
+  margin-bottom: 15px;
 }
 
-.register-box input {
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: white;
+}
+
+.form-group input, 
+.form-group select {
   width: 100%;
   padding: 14px 16px;
-  margin: 10px 0;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -105,45 +95,35 @@ nav.links a:hover{color:white;background:linear-gradient(90deg, rgba(255,255,255
   font-weight: 300;
 }
 
-.register-box input::placeholder {
+.form-group input::placeholder, 
+.form-group select::placeholder {
   color: var(--muted);
   opacity: 0.6;
 }
 
-.register-box button {
+.form-group input:focus, 
+.form-group select:focus {
+  border-color: var(--accent1);
+  outline: none;
+}
+
+.cta {
   width: 80%;
   padding: 14px;
   border-radius: 12px;
   font-size: 16px;
   font-weight: 700;
-  margin-top: 10px;
+  margin-top: 20px;
   cursor: pointer;
   background: linear-gradient(90deg, var(--accent1), var(--accent2));
   color: #042028;
   border: none;
   box-shadow: 0 6px 20px rgba(124, 148, 255, 0.12);
+  margin-left: 80px;
 }
 
-.register-box p {
-  margin-top: 20px;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.register-box a {
-  color: var(--accent2);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s;
-}
-
-.register-box a:hover {
-  color: var(--accent1);
-}
-
-/* =========================
-   Footer
-   ========================= */
+/* 
+   Footer*/
 footer{
   padding:30px 0;background:transparent;border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:var(--muted);
   margin-top: auto;
@@ -154,3 +134,29 @@ footer{
   header.nav{top:12px}
   .brand .title{font-size:14px}
 }
+
+
+
+/* logout button */
+
+ .logout-btn {
+      margin-top: 20px;
+      background: #4ed79c;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      color: rgb(20, 4, 4);
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-left: 330px;
+    }
+    .logout-btn:hover {
+      background: #d92c2c;
+      text-align: center;
+    }
+    #updateMsg {
+      margin-top: 15px;
+      color: green;
+      font-weight: 600;
+    }

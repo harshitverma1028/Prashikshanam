@@ -11,7 +11,7 @@
 <body>
   <header class="nav">
     <div class="nav-inner wrap" role="navigation" aria-label="Main navigation">
-      <div class="brand" aria-hidden="false">
+      <div class="brand">
         <img src="images/prashikshanamm.jpg" alt="Prashikshanam logo">
         <div>
           <div class="title">प्रशिक्षणम्</div>
@@ -30,21 +30,43 @@
       </div>
     </div>
   </header>
+
   <main class="login-container">
     <div class="login-box">
-      <h2>Login as employer</h2>
-      <form>
-        <input type="text" placeholder="Enter employer username" required>
-        <input type="password" placeholder="Enter Password" required>
-        <input type="text" placeholder="Enter employer id" required>
-        <button type="submit">Login as employer </button>
+      <h2>Login as Employer</h2>
+      <form onsubmit="return login(event)">
+        <input type="text" id="username" placeholder="Enter employer username" required>
+        <input type="text" id="userid" placeholder="Enter user id" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <button type="submit">Login as Employer</button>
+        <p id="errorMsg" style="color:red; margin-top:10px;"></p>
       </form>
     </div>
   </main>
+
   <footer>
     <div class="wrap">
       © 2025 PM Internship Recommendation Portal | Designed by Team Synapse
     </div>
   </footer>
+
+  <script>
+    function login(event) {
+      event.preventDefault(); // prevent page reload
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const userid = document.getElementById("userid").value.trim();
+
+      // demo credentials
+      if (username === "harshit" && password === "1234" && userid==="harshit1234") {
+        localStorage.setItem("isLoggedIn", "true"); // store login status
+        window.location.href = "employeeportal.html"; // redirect to portal
+      } else {
+        document.getElementById("errorMsg").innerText =
+          "Invalid username or password!";
+      }
+    }
+  </script>
 </body>
 </html>
