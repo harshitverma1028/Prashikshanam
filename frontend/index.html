@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PM Internship Recommendation Portal — Prashikshanam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner wrap" role="navigation" aria-label="Main navigation">
+    <div class="brand" aria-hidden="false">
+      <img src="prashikshanamm.jpg" alt="Prashikshanam ">
+      <div>
+        <div class="title" data-lang-key="logo_text">प्रशिक्षणम्</div>
+        <div class="tiny">PM Internship Recommendation Portal</div>
+      </div>
+    </div>
+    <nav class="links" aria-label="Primary links">
+      <a href="index.html" data-lang-key="nav_home">Home</a>
+      <a href="#about" data-lang-key="nav_about">About Us</a>
+      <a href="support.html" data-lang-key="nav_support">Support</a>
+      <a href="login.html" data-lang-key="nav_login">Login</a>
+      <a href="employee.html" data-lang-key="nav_admin">For employer ></a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <select id="language-selector" class="lang-select" aria-label="Select language" style="background-color:#0a1d35;">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="gu">Gujarati</option>
+        <option value="kn">Kannada</option>
+        <option value="bn">Bengali</option>
+        <option value="ta">Tamil</option>
+        <option value="mr">Marathi</option>
+        <option value="te">Telugu</option>
+        <option value="or">Odia</option>
+        <option value="ml">Malayalam</option>
+      </select>
+      <button class="cta" onclick="location.href='dashboard.html'" data-lang-key="explore_btn">Explore Internships</button>
+    </div>
+  </div>
+</header>
+
+<main class="hero" id="home">
+  <div class="hero-inner wrap">
+    <div class="hero-left">
+      <div class="eyebrow">Server-side verified · Govt backed</div>
+      <h1 data-lang-key="hero_heading">AI-Based Internship <span class="typewriter" id="typewriter">Recommendation Engine</span></h1>
+      <p data-lang-key="hero_para">Personalized internship recommendations that match your skills, location and ambitions — powered by an intelligent ranking engine used for the PM Internship Scheme.</p>
+      <div class="hero-actions">
+        <button class="cta" onclick="location.href='dashboard.html'" data-lang-key="explore_btn">Get Started</button>
+        <button class="glass-btn" onclick="openModal()">How it works</button>
+      </div>
+      <div class="marquee-wrap">
+        <div class="marquee" data-lang-key="marquee_text">Register • Upload details • Enroll in PM Internship program • Screening & Selection ongoing — Check dashboard & email regularly</div>
+      </div>
+    </div>
+    <div class="hero-right" aria-hidden="false">
+      <div class="blob" aria-hidden="true">
+        <svg viewBox="0 0 800 600" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#7a9cff" stop-opacity="0.9"/>
+              <stop offset="1" stop-color="#07b8a6" stop-opacity="0.9"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#g1)" d="M432,18C482,66,552,84,603,123C652,161,714,206,734,261C755,317,731,386,688,439C645,493,581,540,515,547C449,554,389,529,334,497C279,466,210,430,181,380C152,330,171,267,198,215C224,163,300,111,362,83C425,55,385,-30,432,18Z"/>
+        </svg>
+      </div>
+      <div class="stack" aria-hidden="true">
+        <div class="card">
+          <h4 data-lang-key="feature1_heading">AI-Powered Matching</h4>
+          <p class="muted" data-lang-key="feature1_para">Smart ranking based on skills, interest & profile strength.</p>
+        </div>
+        <div class="card">
+          <h4 data-lang-key="feature2_heading">Government Backed</h4>
+          <p class="muted" data-lang-key="feature2_para">Aligned with Prime Minister Internship Scheme for credibility.</p>
+        </div>
+      </div>
+      <img src="stepsbg.jpg" alt="" style="position:absolute;left:14px;bottom:14px;width:280px;border-radius:10px;object-fit:cover;opacity:0.12;filter:grayscale(40%)" />
+    </div>
+  </div>
+</main>
+  <section class="slideshow-section">
+  <div class="wrap">
+    <div class="slideshow-container">
+      <div class="slideshow-track">
+        <img src="images/gov1.jpg" alt="Slideshow Image 1" class="slideshow-image">
+        <img src="images/gov2.jpg" alt="Slideshow Image 2" class="slideshow-image">
+        <img src="images/gov3.jpg" alt="Slideshow Image 3" class="slideshow-image">
+        <img src="images/gov4.jpg" alt="Slideshow Image 4" class="slideshow-image">
+        <img src="images/gov5.jpg" alt="Slideshow Image 5" class="slideshow-image">
+        <img src="images/gov6.jpg" alt="Slideshow Image 6" class="slideshow-image">
+        <img src="images/gov7.jpg" alt="Slideshow Image 7" class="slideshow-image">
+      
+      </div>
+    </div>
+  </div>
+</section>
+<section id="about" class="wrap">
+  <div class="section-title" data-lang-key="about_heading">About Us</div>
+  <div class="grid cols-2">
+    <div class="card-glass">
+      <h3 style="margin:0 0 12px">Bridging talent & opportunity</h3>
+      <p class="muted" data-lang-key="about_para">We use machine learning to surface internships that align with your background and growth goals. Transparent ranking, mentor match and placement assistance — all in one portal.</p>
+      <div style="margin-top:14px;display:flex;gap:10px">
+        <button class="glass-btn" onclick="openModal()">See steps</button>
+        <a class="glass-btn" href="#why">Why Prashikshanam?</a>
+      </div>
+    </div>
+    <div class="card-glass center" style="min-height:160px">
+      <div>
+        <img src="prashikshanamm.jpg" alt="logo" style="width:160px;border-radius:10px;display:block;margin:0 auto 12px" />
+        
+      </div>
+    </div>
+  </div>
+</section>
+<section id="why" style="background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)">
+  <div class="wrap">
+    <div class="section-title" data-lang-key="why_heading">Why Prashikshanam?</div>
+    <div class="why-grid">
+      <div class="why-left">
+        <h2 style="margin:0 0 12px">Learn, Build & Get Placed</h2>
+        <p class="muted">Hands-on projects, mentor guidance from industry experts, and real internship placements to help you launch a career.</p>
+      </div>
+      <div class="why-right">
+        <div class="why-card">
+          <strong data-lang-key="card1_heading">Practical Training</strong>
+          <div class="muted" data-lang-key="card1_para">Industry-aligned projects & evaluations</div>
+        </div>
+        <div class="why-card">
+          <strong data-lang-key="card2_heading">Expert Mentors</strong>
+          <div class="muted" data-lang-key="card2_para">Guidance during internships and resume support</div>
+        </div>
+        <div class="why-card">
+          <strong data-lang-key="card3_heading">Placement Support</strong>
+          <div class="muted" data-lang-key="card3_para">Assistance with applications and interviews</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="steps">
+  <div class="wrap">
+    <div class="section-title">How it works</div>
+    <div class="steps-wrap">
+      <svg class="connection" width="100%" height="200" viewBox="0 0 1200 200" preserveAspectRatio="none">
+        <defs>
+          <marker id="arr" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 z" fill="#7a9cff"></path>
+          </marker>
+        </defs>
+      </svg>
+      <div class="steps" aria-hidden="false">
+        <div class="step-box" data-step="1"><div class="step-num">1</div><div class="muted" data-lang-key="step_1">Choose field</div></div>
+        <div class="step-box" data-step="2"><div class="step-num">2</div><div class="muted" data-lang-key="step_2">Complete profile</div></div>
+        <div class="step-box" data-step="3"><div class="step-num">3</div><div class="muted" data-lang-key="step_3">Filter & search</div></div>
+        <div class="step-box" data-step="4"><div class="step-num">4</div><div class="muted" data-lang-key="step_4">Apply & track</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="stats">
+  <div class="wrap">
+    <div class="section-title" data-lang-key="stats_heading">We're good with numbers</div>
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="num" data-target="15000">0</div>
+        <div class="label" data-lang-key="stat1_label">🎓 Students Placed</div>
+      </div>
+      <div class="stat">
+        <div class="num" data-target="500">0</div>
+        <div class="label" data-lang-key="stat2_label">📄 Internships Available</div>
+      </div>
+      <div class="stat">
+        <div class="num" data-target="200">0</div>
+        <div class="label" data-lang-key="stat3_label">🏢 Partner Companies</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-title" data-lang-key="testimonials_heading">What Students Say</div>
+    <div class="testi-wrap">
+      <div style="overflow:hidden">
+        <div class="testi-track" id="testiTrack" style="transform:translateX(0%)">
+          <div class="testi-card">
+            <p data-lang-key="testimonial1_text">“This portal matched me to internships quickly and effectively. Highly recommend!”</p>
+            <div class="tiny" style="margin-top:12px" data-lang-key="testimonial1_author">— Aditi Sharma, B.Tech CSE</div>
+          </div>
+          <div class="testi-card">
+            <p data-lang-key="testimonial2_text">“AI recommendations were spot-on; got placed within a week of registering.”</p>
+            <div class="tiny" style="margin-top:12px" data-lang-key="testimonial2_author">— Rajesh Kumar, MBA</div>
+          </div>
+          <div class="testi-card">
+            <p data-lang-key="testimonial3_text">“A user-friendly platform with real opportunities under the PM Internship Scheme.”</p>
+            <div class="tiny" style="margin-top:12px" data-lang-key="testimonial3_author">— Priya Verma, B.Sc IT</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-controls">
+        <div style="display:flex;gap:10px">
+          <button class="glass-btn" id="prevTest">‹</button>
+          <button class="glass-btn" id="nextTest">›</button>
+        </div>
+        <div class="tiny muted" id="testCounter">1 / 3</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <footer class="main-footer">
+    <div class="footer-inner wrap">
+        <div class="footer-columns">
+            <div class="footer-col">
+                <div class="footer-col-title">Internships</div>
+                <a href="#">Government Internships</a>
+                <a href="#">Private Internships</a>
+                <a href="#">AI Recommended</a>
+                <a href="#">View All</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Students</div>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="index.html#steps">How it Works</a>
+                <a href="support.html#faq">FAQs</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Employers</div>
+                <a href="employee.html">Employer Login</a>
+                <a href="#">Post an Internship</a>
+                <a href="#">Partner with Us</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">About</div>
+                <a href="index.html#about">About Us</a>
+                <a href="support.html">Contact Support</a>
+                <a href="#">Terms & Privacy</a>
+            </div>
+        </div>
+</footer>
+  
+  <div class="wrap">
+    <p data-lang-key="footer_text">© 2025 PM Internship Recommendation Portal | Designed by Team Synapse</p>
+  </div>
+</footer>
+<div id="modal" style="position:fixed;inset:0;display:none;place-items:center;background:rgba(2,6,23,0.6);z-index:60">
+  <div style="width:92%;max-width:680px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.04);">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h3 style="margin:0" data-lang-key="how_it_works_heading">How it works</h3>
+      <button onclick="closeModal()" class="glass-btn">Close</button>
+    </div>
+    <div style="margin-top:12px;color:var(--muted)">
+      <ol>
+        <li data-lang-key="step_1_para">Choose your domain and preferences</li>
+        <li data-lang-key="step_2_para">Complete and verify your profile</li>
+        <li data-lang-key="step_3_para">Get AI-ranked internship matches</li>
+        <li data-lang-key="step_4_para">Apply & track application status from dashboard</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- chatbot -->
+
+
+
+<div id="chatbot-btn" title="Chat with PM InternBot">💬</div>
+<div id="chatbot-box" aria-hidden="true">
+    <div class="chat-header">
+        Your personal AI assistant
+        <span id="close-chat" title="Close">✖</span>
+    </div>
+    <div class="chat-body" id="chat-body"></div>
+    <div class="chat-input">
+        <input type="text" id="chat-input" placeholder="Type your question (e.g., How to apply?)" />
+        <button id="send-btn" title="Send">➤</button>
+    </div>
+<script src="javascript/script.js"></script>
+<script src="javascript/lang.js"></script>
+<script src="javascript/chatbot.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support | PM Internship Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/support.css">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner wrap" role="navigation" aria-label="Main navigation">
+    <div class="brand" aria-hidden="false">
+      <img src="prashikshanamm.jpg" alt="Prashikshanam logo">
+      <div>
+        <div class="title">प्रशिक्षणम्</div>
+        <div class="tiny">PM Internship Recommendation Portal</div>
+      </div>
+    </div>
+    <nav class="links" aria-label="Primary links">
+      <a href="index.html" data-lang-key="nav_home">Home</a>
+      <a href="index.html#about" data-lang-key="nav_about">About Us</a>
+      <a href="support.html" data-lang-key="nav_support">Support</a>
+      <a href="login.html" data-lang-key="nav_login">Login</a>
+      <a href="employee.html" data-lang-key="nav_admin">For employer ></a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="cta" onclick="location.href='dashboard.html'">Explore Internships</button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="support-hero">
+    <h1>We’re Here to Help</h1>
+    <p>If you face any issues while using the portal, our support team is ready to assist you.</p>
+  </section>
+  <section class="support-section wrap">
+    <h2>Support Options</h2>
+    <div class="grid cols-2">
+      <div class="card-glass support-card">
+        <h3>📧 Email Support</h3>
+        <p>Reach us at <a href="mailto:support@pminternship.gov.in">support@pminternship.gov.in</a></p>
+      </div>
+      <div class="card-glass support-card">
+        <h3>📞 Phone Support</h3>
+        <p>Call us at: <strong>+91 8171921994</strong><br>
+          <strong>+91 8595140288</strong><br> (Mon–Fri, 9 AM–6 PM)</p>
+      </div>
+      <div class="card-glass support-card">
+        <h3>❓ FAQs</h3>
+        <p>Visit our <a href="#faq">FAQ section</a> to find quick answers to common questions.</p>
+      </div>
+      <div class="card-glass support-card">
+        <h3>💬 Back to home page</h3>
+        <p>Use this<a href="index.html"> home</a>to navigate to home page.</p>
+      </div>
+    </div>
+  </section>
+  <section class="support-form wrap">
+    <h2>Submit a Support Request</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Describe your issue..." required></textarea>
+      <button type="submit" class="cta">Submit Request</button>
+    </form>
+  </section>
+  <div class="faq-container wrap" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question">What is the PM Internship Portal?</div>
+      <div class="faq-answer">The PM Internship Portal is a platform designed to connect students with internship opportunities under various government and private schemes.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How do I register?</div>
+      <div class="faq-answer">Click on the "Register" option in the navigation bar, fill in your details, and create an account. You can then log in to explore opportunities.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Is there any registration fee?</div>
+      <div class="faq-answer">No, registration is completely free for students and organizations.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Who can apply for internships?</div>
+      <div class="faq-answer">Any student pursuing undergraduate or postgraduate studies can apply, depending on the eligibility criteria of the internship.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How do I contact support?</div>
+      <div class="faq-answer">You can reach out via the "Support" or "Contact Us" sections for queries or assistance.</div>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    © 2025 PM Internship Recommendation Portal | Designed by Team Synapse
+  </div>
+</footer>
+<script>
+  document.querySelectorAll('.faq-question').forEach(item => {
+    item.addEventListener('click', event => {
+      const answer = item.nextElementSibling;
+      item.classList.toggle('active');
+      if (item.classList.contains('active')) {
+        answer.style.display = 'block';
+      } else {
+        answer.style.display = 'none';
+      }
+    });
+  });
+</script>
+</body>
+</html>

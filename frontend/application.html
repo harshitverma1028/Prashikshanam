@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form | PM Internship Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/application.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner wrap" role="navigation" aria-label="Main navigation">
+      <div class="brand" aria-hidden="false">
+        <img src="prashikshanamm.jpg" alt="Prashikshanam logo">
+        <div>
+          <div class="title">प्रशिक्षणम्</div>
+          <div class="tiny">PM Internship Recommendation Portal</div>
+        </div>
+      </div>
+      <nav class="links" aria-label="Primary links">
+        <a href="index.html" data-lang-key="nav_home">Home</a>
+        <a href="index.html#about" data-lang-key="nav_about">About Us</a>
+        <a href="support.html" data-lang-key="nav_support">Support</a>
+        <a href="login.html" data-lang-key="nav_login">Login</a>
+        <a href="employee.html" data-lang-key="nav_admin">For employer ></a>
+      </nav>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="cta" onclick="location.href='dashboard.html'">Explore Internships</button>
+      </div>
+    </div>
+  </header>
+  <main class="form-container">
+    <h2>Application Form</h2>
+    <form>
+      <div class="form-group">
+        <label for="internship_title">Internship Title</label>
+        <input type="text" id="internship_title" name="internship_title" placeholder="Enter internship title">
+      </div>
+      <div class="form-group">
+        <label for="company_name">Company Name</label>
+        <input type="text" id="company_name" name="company_name" placeholder="Enter company name">
+      </div>
+      <div class="form-group">
+        <label for="location">Location</label>
+        <select name="location" id="location" required>
+            <option value="">--Select preferred location--</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Bhubaneshwar">Bhubaneshwar</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Gurgaon">Gurgaon</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="New Delhi">New Delhi</option>
+            <option value="Noida">Noida</option>
+            <option value="New Delhi">New Delhi</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Vadodra">Vadodra</option>
+            <option value="Work from home">Work from home</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="startdate">Start Date</label>
+        <input type="date" id="startdate" name="startdate">
+      </div>
+      <div class="form-group">
+        <label for="duration">Duration</label>
+        <input type="text" id="duration" name="duration" placeholder="e.g. 3 months">
+      </div>
+      <div class="form-group">
+        <label for="stipend">Select stipend range</label>
+        <select name="stipend" id="stipend">
+          <option value="">--Select stipend range--</option>
+          <option value="5000-10,000">5000-10,000</option>
+          <option value="10,000-20,000">10,000-20,000</option>
+          <option value="20,000-30,000">20,000-30,000</option>
+          <option value="30,000-40,000">30,000-40,000</option>
+          <option value="40,000-50,000">40,000-50,000</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="education">Education</label>
+        <select id="education" name="education" required>
+          <option value="">-- Select Education --</option>
+          <option value="btech">B.Tech</option>
+          <option value="mtech">M.Tech</option>
+          <option value="bca">BCA</option>
+          <option value="mca">MCA</option>
+          <option value="diploma">Diploma</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="skills">Skills</label>
+        <select id="skills" name="skills">
+          <option value="">-- Select Skill --</option>
+          <option value="webdev">Web Development</option>
+          <option value="java">Java</option>
+          <option value="python">Python</option>
+          <option value="cloud">Cloud Computing</option>
+          <option value="cybersecurity">Cybersecurity</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="interest">Interest</label>
+        <select id="interest" name="interest">
+          <option value="">-- Select Interest --</option>
+          <option value="ai">Artificial Intelligence</option>
+          <option value="ml">Machine Learning</option>
+          <option value="data">Data Science</option>
+          <option value="blockchain">Blockchain</option>
+          <option value="iot">IoT</option>
+        </select>
+      </div>
+      <button type="submit" class="cta">Submit</button>
+    </form>
+  </main>
+  <footer>
+    <div class="wrap">
+      © 2025 PM Internship Recommendation Portal | Designed by Team Synapse
+    </div>
+  </footer>
+</body>
+</html>

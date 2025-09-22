@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | PM Internship Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner wrap" role="navigation" aria-label="Main navigation">
+      <div class="brand" aria-hidden="false">
+        <img src="prashikshanamm.jpg" alt="Prashikshanam logo">
+        <div>
+          <div class="title">प्रशिक्षणम्</div>
+          <div class="tiny">PM Internship Recommendation Portal</div>
+        </div>
+      </div>
+      <nav class="links" aria-label="Primary links">
+        <a href="index.html" data-lang-key="nav_home">Home</a>
+        <a href="index.html#about" data-lang-key="nav_about">About Us</a>
+        <a href="support.html" data-lang-key="nav_support">Support</a>
+        <a href="login.html" data-lang-key="nav_login">Login</a>
+        <a href="employee.html" data-lang-key="nav_admin">For employer ></a>
+      </nav>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="cta" onclick="location.href='dashboard.html'">Explore Internships</button>
+      </div>
+    </div>
+  </header>
+  <div class="dashboard-wrapper">
+    <div class="sidebar">
+      <ul>
+        <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="application.html"><i class="fas fa-desktop"></i> Application</a></li>
+        <li><a href="#"><i class="fas fa-keyboard"></i> Profile</a></li>
+        <li><a href="#"><i class="fas fa-file-alt"></i> Recommended Internships</a></li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <div class="cards-grid">
+        <div class="card-glass dashboard-card">
+          <span>Internships Available<br><strong>1234</strong></span>
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="card-glass dashboard-card">
+          <span>Students Registered<br><strong>1234</strong></span>
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <div class="card-glass dashboard-card">
+          <span>Applications Pending<br><strong>1234</strong></span>
+          <i class="fas fa-chart-area"></i>
+        </div>
+        <div class="card-glass dashboard-card">
+          <span>Internships Filled<br><strong>1234</strong></span>
+          <i class="fas fa-pie-chart"></i>
+        </div>
+      </div>
+      <div class="graph-container">
+        <div class="card-glass graph-card">
+          <h3>Students Enrolled</h3>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <canvas id="internChart" width="300" height="150"></canvas>
+        </div>
+      </div>
+      <div class="india-card">
+        <div class="card-glass india-inner-card">
+          <img src="india.jpg" alt="Digital map of India">
+          <p> Just like this digital network map of India connects every city with light and technology, Prashikshanam envisions connecting learners across the nation with knowledge, skills, and opportunities. From Delhi to Chennai, Mumbai to Kolkata, Hyderabad to the North-East – every region holds untapped potential.With the power of digital training, mentorship, and innovation, Prashikshanam is creating a seamless learning ecosystem where skills travel faster than ever, opportunities reach every corner, and India grows stronger together.<br><br><br> <i class="fa-solid fa-moon"></i> Skill by Skill, City by City, India by India. </p> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap">
+      © 2025 PM Internship Recommendation Portal | Designed by Team Synapse
+    </div>
+  </footer>
+  <script>
+    const ctx = document.getElementById('internChart').getContext('2d');
+    const internChart = new Chart(ctx, {
+        type: 'bar', 
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr'],
+            datasets: [{
+                label: 'Applications Received',
+                data: [12, 19, 3, 5],
+                backgroundColor: '#07b8a6'
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: true },
+            },
+            scales: {
+              x: { grid: { color: 'rgba(255,255,255,0.1)' } },
+              y: { grid: { color: 'rgba(255,255,255,0.1)' } }
+            }
+        }
+    });
+  </script>
+</body>
+</html>
