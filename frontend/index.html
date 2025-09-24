@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title data-lang-key="page_title">PM Internship Recommendation Portal — Prashikshanam</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/chatbot.css">
 </head>
@@ -21,14 +20,19 @@
         <div class="tiny" data-lang-key="logo_subtitle">PM Internship Recommendation Portal</div>
       </div>
     </div>
-    <nav class="links" aria-label="Primary links">
+    <button class="hamburger" aria-label="Toggle navigation menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="links nav-menu" aria-label="Primary links">
       <a href="index.html" data-lang-key="nav_home">Home</a>
       <a href="#about" data-lang-key="nav_about">About Us</a>
       <a href="support.html" data-lang-key="nav_support">Support</a>
       <a href="login.html" data-lang-key="nav_login">Login</a>
       <a href="employee.html" data-lang-key="nav_employer">For employer ></a>
     </nav>
-    <div style="display:flex;gap:10px;align-items:center">
+    <div style="display:flex;gap:10px;align-items:center" class="nav-menu">
       <select id="language-selector" class="lang-select" aria-label="Select language" style="background-color:#0a1d35;">
         <option value="en">English</option>
         <option value="hi">Hindi</option>
@@ -217,7 +221,7 @@
     </div>
   </div>
   <div class="wrap">
-    <p data-lang-key="footer_text">© 2025 PM Internship Recommendation Portal | Designed by Team Synapse</p>
+    <center><p data-lang-key="footer_text">© 2025 PM Internship Recommendation Portal | Designed by Team Synapse</p></center>
   </div>
 </footer>
 
