@@ -3,21 +3,22 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>PM Internship Recommendation Portal — Prashikshanam</title>
+    <title data-lang-key="page_title">PM Internship Recommendation Portal — Prashikshanam</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/chatbot.css">
 </head>
 <body>
-<iframe id="bg-page" src="chakra.html"></iframe>
+<iframe id="bg-page" src="chakra.html" title="Background Animation"></iframe>
+
 <header class="nav">
   <div class="nav-inner wrap" role="navigation" aria-label="Main navigation">
     <div class="brand" aria-hidden="false">
-      <img src="images/prashikshanamm.jpg" alt="Prashikshanam ">
+      <img src="images/prashikshanamm.jpg" alt="Prashikshanam Logo" data-lang-key="logo_alt">
       <div>
         <div class="title" data-lang-key="logo_text">प्रशिक्षणम्</div>
-        <div class="tiny">PM Internship Recommendation Portal</div>
+        <div class="tiny" data-lang-key="logo_subtitle">PM Internship Recommendation Portal</div>
       </div>
     </div>
     <nav class="links" aria-label="Primary links">
@@ -25,7 +26,7 @@
       <a href="#about" data-lang-key="nav_about">About Us</a>
       <a href="support.html" data-lang-key="nav_support">Support</a>
       <a href="login.html" data-lang-key="nav_login">Login</a>
-      <a href="employee.html" data-lang-key="nav_admin">For employer ></a>
+      <a href="employee.html" data-lang-key="nav_employer">For employer ></a>
     </nav>
     <div style="display:flex;gap:10px;align-items:center">
       <select id="language-selector" class="lang-select" aria-label="Select language" style="background-color:#0a1d35;">
@@ -48,90 +49,83 @@
 <main class="hero" id="home">
   <div class="hero-inner wrap">
     <div class="hero-left">
-      <div class="eyebrow">Server-side verified · Govt backed</div>
+      <div class="eyebrow" data-lang-key="hero_eyebrow">Server-side verified · Govt backed</div>
       <h1 data-lang-key="hero_heading">AI-Based Internship <span class="typewriter" id="typewriter">Recommendation Engine</span></h1>
       <p data-lang-key="hero_para">Personalized internship recommendations that match your skills, location and ambitions — powered by an intelligent ranking engine used for the PM Internship Scheme.</p>
       <div class="hero-actions">
         <button class="cta" onclick="location.href='dashboard.html'" data-lang-key="explore_btn">Get Started</button>
-        <button class="glass-btn" onclick="openModal()">How it works</button>
+        <button class="glass-btn" onclick="openModal()" data-lang-key="how_it_works_btn">How it works</button>
       </div>
       <div class="marquee-wrap">
         <div class="marquee" data-lang-key="marquee_text">Register • Upload details • Enroll in PM Internship program • Screening & Selection ongoing — Check dashboard & email regularly</div>
       </div>
     </div>
-   
-      <img src="stepsbg.jpg" alt="" style="position:absolute;left:14px;bottom:14px;width:280px;border-radius:10px;object-fit:cover;opacity:0.12;filter:grayscale(40%)" />
-    </div>
+      <img src="stepsbg.jpg" alt="" data-lang-key="hero_bg_alt" style="position:absolute;left:14px;bottom:14px;width:280px;border-radius:10px;object-fit:cover;opacity:0.12;filter:grayscale(40%)" />
   </div>
 </main>
-  <section class="slideshow-section">
+
+<section class="slideshow-section">
   <div class="wrap">
     <div class="slideshow-container">
       <div class="slideshow-track">
-        <img src="images/gov1.jpg" alt="Slideshow Image 1" class="slideshow-image">
-        <img src="images/gov2.jpg" alt="Slideshow Image 2" class="slideshow-image">
-        <img src="images/gov3.jpg" alt="Slideshow Image 3" class="slideshow-image">
-        <img src="images/gov4.jpg" alt="Slideshow Image 4" class="slideshow-image">
-        <img src="images/gov5.jpg" alt="Slideshow Image 5" class="slideshow-image">
-        <img src="images/gov6.jpg" alt="Slideshow Image 6" class="slideshow-image">
-        <img src="images/gov7.jpg" alt="Slideshow Image 7" class="slideshow-image">
-      
+        <img src="images/gov1.jpg" alt="Slideshow Image 1" data-lang-key="slide1" class="slideshow-image">
+        <img src="images/gov2.jpg" alt="Slideshow Image 2" data-lang-key="slide2" class="slideshow-image">
+        <img src="images/gov3.jpg" alt="Slideshow Image 3" data-lang-key="slide3" class="slideshow-image">
+        <img src="images/gov4.jpg" alt="Slideshow Image 4" data-lang-key="slide4" class="slideshow-image">
+        <img src="images/gov5.jpg" alt="Slideshow Image 5" data-lang-key="slide5" class="slideshow-image">
+        <img src="images/gov6.jpg" alt="Slideshow Image 6" data-lang-key="slide6" class="slideshow-image">
+        <img src="images/gov7.jpg" alt="Slideshow Image 7" data-lang-key="slide7" class="slideshow-image">
       </div>
     </div>
   </div>
 </section>
+
 <section id="about" class="wrap">
   <div class="section-title" data-lang-key="about_heading">About Us</div>
   <div class="grid cols-2">
     <div class="card-glass">
-      <h3 style="margin:0 0 12px">Bridging talent & opportunity</h3>
+      <h3 style="margin:0 0 12px" data-lang-key="about_subheading">Bridging talent & opportunity</h3>
       <p class="muted" data-lang-key="about_para">We use machine learning to surface internships that align with your background and growth goals. Transparent ranking, mentor match and placement assistance — all in one portal.</p>
       <div style="margin-top:14px;display:flex;gap:10px">
-        <button class="glass-btn" onclick="openModal()">See steps</button>
-        <a class="glass-btn" href="#why">Why Prashikshanam?</a>
+        <button class="glass-btn" onclick="openModal()" data-lang-key="see_steps_btn">See steps</button>
+        <a class="glass-btn" href="#why" data-lang-key="why_link">Why Prashikshanam?</a>
       </div>
     </div>
     <div class="card-glass center" style="min-height:160px">
       <div>
-        <img src="images/prashikshanamm.jpg" alt="logo" style="width:160px;border-radius:10px;display:block;margin:0 auto 12px" />
-        
+        <img src="images/prashikshanamm.jpg" alt="logo" data-lang-key="about_logo_alt" style="width:160px;border-radius:10px;display:block;margin:0 auto 12px" />
       </div>
     </div>
   </div>
 </section>
+
 <section id="why" style="background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)">
-   <section class="section1" id="why">
+  <section class="section1" id="why">
     <h2 data-lang-key="why_heading">Why Prashikshanam?</h2>
     <div class="cards-container1">
         <div class="card1">
             <h3 data-lang-key="card1_heading">Practical Training</h3>
-            <p data-lang-key="card1_para">"Best training programs designed to boost your career with real projects. Gain hands-on experience, learn from industry experts, and build a strong portfolio to stand out in the job market."</p>
+            <p data-lang-key="card1_para">Best training programs designed to boost your career with real projects...</p>
         </div>
         <div class="card1">
             <h3 data-lang-key="card2_heading">Industry Experts</h3>
-            <p data-lang-key="card2_para">Learn directly from industry experts who bring real-world knowledge and give you oportunities to work on real world problems.</p>
+            <p data-lang-key="card2_para">Learn directly from industry experts...</p>
         </div>
         <div class="card1">
             <h3 data-lang-key="card3_heading">Internship Opportunities</h3>
-            <p data-lang-key="card3_para">Get placed into internships with leading companies while you learn and have experience of working in top most companies.</p>
+            <p data-lang-key="card3_para">Get placed into internships with leading companies...</p>
         </div>
         <div class="card1">
             <h3 data-lang-key="card4_heading">Career Growth</h3>
-            <p data-lang-key="card4_para">Practical sessions and strong mentorship to accelerate your career, with guidance tailored to industry demands and future opportunities ,helping you gain confidence, real-world skills, and a competitive edge.</p>
+            <p data-lang-key="card4_para">Practical sessions and strong mentorship...</p>
         </div>
     </div>
-</section>
+  </section>
+
   <div class="wrap">
-    <div class="section-title">How it works</div>
+    <div class="section-title" data-lang-key="how_heading">How it works</div>
     <div class="steps-wrap">
-      <svg class="connection" width="100%" height="200" viewBox="0 0 1200 200" preserveAspectRatio="none">
-        <defs>
-          <marker id="arr" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
-            <path d="M0,0 L8,4 L0,8 z" fill="#7a9cff"></path>
-          </marker>
-        </defs>
-      </svg>
-      <div class="steps" aria-hidden="false">
+      <div class="steps">
         <div class="step-box" data-step="1"><div class="step-num">1</div><div class="muted" data-lang-key="step_1">Choose field</div></div>
         <div class="step-box" data-step="2"><div class="step-num">2</div><div class="muted" data-lang-key="step_2">Complete profile</div></div>
         <div class="step-box" data-step="3"><div class="step-num">3</div><div class="muted" data-lang-key="step_3">Filter & search</div></div>
@@ -140,6 +134,7 @@
     </div>
   </div>
 </section>
+
 <section id="stats">
   <div class="wrap">
     <div class="section-title" data-lang-key="stats_heading">We're good with numbers</div>
@@ -159,23 +154,24 @@
     </div>
   </div>
 </section>
+
 <section id="testimonials">
   <div class="wrap">
     <div class="section-title" data-lang-key="testimonials_heading">What Students Say</div>
     <div class="testi-wrap">
       <div style="overflow:hidden">
-        <div class="testi-track" id="testiTrack" style="transform:translateX(0%)">
+        <div class="testi-track" id="testiTrack">
           <div class="testi-card">
-            <p data-lang-key="testimonial1_text">“This portal matched me to internships quickly and effectively. Highly recommend!”</p>
-            <div class="tiny" style="margin-top:12px" data-lang-key="testimonial1_author">— Aditi Sharma, B.Tech CSE</div>
+            <p data-lang-key="testimonial1_text">“This portal matched me...”</p>
+            <div class="tiny" data-lang-key="testimonial1_author">— Aditi Sharma, B.Tech CSE</div>
           </div>
           <div class="testi-card">
-            <p data-lang-key="testimonial2_text">“AI recommendations were spot-on; got placed within a week of registering.”</p>
-            <div class="tiny" style="margin-top:12px" data-lang-key="testimonial2_author">— Rajesh Kumar, MBA</div>
+            <p data-lang-key="testimonial2_text">“AI recommendations were spot-on...”</p>
+            <div class="tiny" data-lang-key="testimonial2_author">— Rajesh Kumar, MBA</div>
           </div>
           <div class="testi-card">
-            <p data-lang-key="testimonial3_text">“A user-friendly platform with real opportunities under the PM Internship Scheme.”</p>
-            <div class="tiny" style="margin-top:12px" data-lang-key="testimonial3_author">— Priya Verma, B.Sc IT</div>
+            <p data-lang-key="testimonial3_text">“A user-friendly platform...”</p>
+            <div class="tiny" data-lang-key="testimonial3_author">— Priya Verma, B.Sc IT</div>
           </div>
         </div>
       </div>
@@ -184,58 +180,53 @@
           <button class="glass-btn" id="prevTest">‹</button>
           <button class="glass-btn" id="nextTest">›</button>
         </div>
-        <div class="tiny muted" id="testCounter">1 / 3</div>
+        <div class="tiny muted" id="testCounter" data-lang-key="testimonial_counter">1 / 3</div>
       </div>
     </div>
   </div>
 </section>
 
-
-
-
-
-
-<footer>
-  <footer class="main-footer">
-    <div class="footer-inner wrap">
-        <div class="footer-columns">
-            <div class="footer-col">
-                <div class="footer-col-title">Internships</div>
-                <a href="#">Government Internships</a>
-                <a href="#">Private Internships</a>
-                <a href="#">AI Recommended</a>
-                <a href="#">View All</a>
-            </div>
-            <div class="footer-col">
-                <div class="footer-col-title">Students</div>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="index.html#steps">How it Works</a>
-                <a href="support.html#faq">FAQs</a>
-            </div>
-            <div class="footer-col">
-                <div class="footer-col-title">Employers</div>
-                <a href="employee.html">Employer Login</a>
-                <a href="#">Post an Internship</a>
-                <a href="#">Partner with Us</a>
-            </div>
-            <div class="footer-col">
-                <div class="footer-col-title">About</div>
-                <a href="index.html#about">About Us</a>
-                <a href="support.html">Contact Support</a>
-                <a href="#">Terms & Privacy</a>
-            </div>
-        </div>
-</footer>
-  
+<footer class="main-footer">
+  <div class="footer-inner wrap">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <div class="footer-col-title" data-lang-key="footer_internships">Internships</div>
+        <a href="#" data-lang-key="footer_govt_intern">Government Internships</a>
+        <a href="#" data-lang-key="footer_private_intern">Private Internships</a>
+        <a href="#" data-lang-key="footer_ai_recommended">AI Recommended</a>
+        <a href="#" data-lang-key="footer_view_all">View All</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-lang-key="footer_students">Students</div>
+        <a href="dashboard.html" data-lang-key="footer_dashboard">Dashboard</a>
+        <a href="index.html#steps" data-lang-key="footer_how">How it Works</a>
+        <a href="support.html#faq" data-lang-key="footer_faq">FAQs</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-lang-key="footer_employers">Employers</div>
+        <a href="employee.html" data-lang-key="footer_employer_login">Employer Login</a>
+        <a href="#" data-lang-key="footer_post_internship">Post an Internship</a>
+        <a href="#" data-lang-key="footer_partner">Partner with Us</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-lang-key="footer_about">About</div>
+        <a href="index.html#about" data-lang-key="footer_aboutus">About Us</a>
+        <a href="support.html" data-lang-key="footer_contact">Contact Support</a>
+        <a href="#" data-lang-key="footer_terms">Terms & Privacy</a>
+      </div>
+    </div>
+  </div>
   <div class="wrap">
     <p data-lang-key="footer_text">© 2025 PM Internship Recommendation Portal | Designed by Team Synapse</p>
   </div>
 </footer>
+
+<!-- Modal -->
 <div id="modal" style="position:fixed;inset:0;display:none;place-items:center;background:rgba(2,6,23,0.6);z-index:60">
   <div style="width:92%;max-width:680px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.04);">
     <div style="display:flex;justify-content:space-between;align-items:center">
-      <h3 style="margin:0" data-lang-key="how_it_works_heading">How it works</h3>
-      <button onclick="closeModal()" class="glass-btn">Close</button>
+      <h3 data-lang-key="how_it_works_heading">How it works</h3>
+      <button onclick="closeModal()" class="glass-btn" data-lang-key="close_btn">Close</button>
     </div>
     <div style="margin-top:12px;color:var(--muted)">
       <ol>
@@ -248,29 +239,24 @@
   </div>
 </div>
 
-
-
-
-<!-- chatbot -->
-
-
-
+<!-- Chatbot -->
 <div id="chatbot-btn" title="Chat with PM InternBot">💬</div>
-<div id="chatbot-intro">👋 Hey, I am your personal AI assistant</div>
+<div id="chatbot-intro" data-lang-key="chat_intro">👋 Hey, I am your personal AI assistant</div>
 <div id="chatbot-box" aria-hidden="true">
-    <div class="chat-header">
-        Your personal AI assistant
-        <span id="close-chat" title="Close">✖</span>
-    </div>
-    <div class="chat-body" id="chat-body"></div>
-    <div class="chat-input">
-        <input type="text" id="chat-input" placeholder="Type your question (e.g., How to apply?)" />
-        <button id="send-btn" title="Send">➤</button>
-    </div>
+  <div class="chat-header" data-lang-key="chat_header">Your personal AI assistant
+    <span id="close-chat" title="Close">✖</span>
+  </div>
+  <div class="chat-body" id="chat-body"></div>
+  <div class="chat-input">
+    <input type="text" id="chat-input" placeholder="Type your question (e.g., How to apply?)" data-lang-key="chat_placeholder" />
+    <button id="send-btn" title="Send" data-lang-key="chat_send">➤</button>
+  </div>
+</div>
+
+<!-- JS -->
 <script src="javascript/script.js"></script>
 <script src="javascript/lang.js"></script>
 <script src="javascript/chatbot.js"></script>
-
 
 </body>
 </html>
