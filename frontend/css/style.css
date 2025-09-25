@@ -340,7 +340,7 @@
   padding: 60px 10%;
 background:rgba( 10, 29, 53,0.6);
   color: #cacecf;
-  display: flex;                  /* Split into 2 halves */
+  display: flex;                  
   justify-content: space-between;
   align-items: center;
   height: 450px;
