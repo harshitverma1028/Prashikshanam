@@ -130,8 +130,6 @@
 
             ringConfigs.forEach((config, index) => {
                 const ringGroup = new THREE.Group();
-                
-                // Create torus geometry for the ring
                 const torusGeometry = new THREE.TorusGeometry(config.radius, config.thickness, 16, config.segments);
                 const torusMaterial = new THREE.MeshPhongMaterial({ 
                     color: config.color,
@@ -237,7 +235,6 @@
                 particle.rotation.x += 0.0005;
             });
             
-            // Smooth camera movement
             currentRotationX += (targetRotationX - currentRotationX) * 0.05;
             currentRotationY += (targetRotationY - currentRotationY) * 0.05;
             
