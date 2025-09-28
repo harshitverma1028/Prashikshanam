@@ -36,9 +36,6 @@ const obs = new IntersectionObserver(entries=>{
 },{threshold:0.35});
 nums.forEach(n=>obs.observe(n));
 
-/* =========================
-   Testimonial slider
-   ========================= */
 const track = document.getElementById('testiTrack');
 const total = track.children.length;
 let cur = 0;
@@ -56,9 +53,7 @@ let autoTest = setInterval(()=>{ cur=(cur+1)%total; updateTest(); }, 4500);
 ['mouseenter','focusin'].forEach(ev=>{ track.addEventListener(ev, ()=>clearInterval(autoTest))});
 ['mouseleave','focusout'].forEach(ev=>{ track.addEventListener(ev, ()=>autoTest = setInterval(()=>{ cur=(cur+1)%total; updateTest(); }, 4500))});
 
-/* =========================
-   Steps SVG connections (draw-on-scroll)
-   ========================= */
+
 function drawConnections(){
   const svg = document.querySelector('svg.connection');
   if(!svg) return;
@@ -160,15 +155,22 @@ window.addEventListener('load', ()=>{ setTimeout(drawConnections, 480); });
         window.addEventListener("scroll", handleScroll);
         window.addEventListener("DOMContentLoaded", handleScroll);
 
-document.addEventListener('DOMContentLoaded', function() {
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu');
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-  });
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

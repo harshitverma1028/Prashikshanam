@@ -20,10 +20,8 @@ closeChat.addEventListener("click", () => {
   chatbotBox.setAttribute("aria-hidden", "true");
 });
 
-// Handle send button
 sendBtn.addEventListener("click", handleUserMessage);
 
-// Handle Enter key
 chatInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") handleUserMessage();
 });
@@ -74,7 +72,7 @@ function getBotResponse(input) {
   if (input.includes("support") || input.includes("help")) {
     return "💡 For help, check the Support section or email us at support@pminternship.gov.in";
   }
-  if (input.includes("hello") || input.includes("hi")) {
+  if (input.includes("hello") || input.includes("hi") || input.includes("hii")) {
     return "👋 Hi there! How can I guide you with internships today?";
   }
   if (input.includes("thanks") || input.includes("thank you")) {
