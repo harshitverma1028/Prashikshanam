@@ -13,27 +13,29 @@
   </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="nav-inner wrap">
-      <div class="brand">
-        <img src="./images/prashikshanamm.jpg" alt="Prashikshanam logo">
-        <div>
-          <div class="title">प्रशिक्षणम्</div>
-          <div class="tiny">PM Internship Recommendation Portal</div>
-        </div>
-      </div>
-      <nav class="links">
-        <a href="index.html">Home</a>
-        <a href="index.html#about">About Us</a>
-        <a href="support.html">Support</a>
-        <a href="login.html">Login</a>
-        <a href="employee.html">For employer ></a>
-      </nav>
-      <div style="display:flex;gap:10px;align-items:center">
-        <button class="cta" onclick="location.href='dashboard.html'">Explore Internships</button>
+<header class="nav">
+  <div class="nav-inner wrap">
+    <div class="brand">
+      <img src="./images/prashikshanamm.jpg" alt="Prashikshanam logo">
+      <div>
+        <div class="title">प्रशिक्षणम्</div>
+        <div class="tiny">PM Internship Recommendation Portal</div>
       </div>
     </div>
-  </header>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About Us</a>
+      <a href="support.html">Support</a>
+      <!-- LOGIN/LOGOUT PLACEHOLDER -->
+      <a href="login.html" id="loginLink">Login</a>
+      <a href="employee.html">For employer ></a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="cta" onclick="location.href='dashboard.html'">Explore Internships</button>
+    </div>
+  </div>
+</header>
+
 
   <main class="login-container">
     <div class="login-box">
@@ -103,6 +105,24 @@
         console.error(err.message);
       }
     }
-  </script>
+
+
+
+  // ✅ Logout function
+  function logoutUser() {
+    localStorage.removeItem("userData");
+    window.location.href = "login.html";
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const userData = localStorage.getItem("userData");
+    if (userData) {
+      loginLink.textContent = "Logout";
+      loginLink.removeAttribute("href");
+      loginLink.style.cursor = "pointer";
+      loginLink.addEventListener("click", logoutUser);
+    }
+  });
+</script>
 </body>
 </html>

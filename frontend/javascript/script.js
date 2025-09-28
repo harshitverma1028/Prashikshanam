@@ -22,7 +22,7 @@ const obs = new IntersectionObserver(entries=>{
       countersRun=true;
       nums.forEach(n=>{
         const target = +n.dataset.target;
-        const duration = 1700;
+        const duration = 7000;
         const start = performance.now();
         const step = (ts)=>{
           const p = Math.min((ts-start)/duration,1);
@@ -121,10 +121,10 @@ window.addEventListener('load', ()=>{ setTimeout(drawConnections, 480); });
 
 
 
-// why prashikshanam
+//                                           why prashikshanam
 
 
- const cards = document.querySelectorAll(".cards-container1 .card1");
+const cards = document.querySelectorAll(".cards-container1 .card1");
         let currentCardIndex = 0;
         let animationInterval;
 
