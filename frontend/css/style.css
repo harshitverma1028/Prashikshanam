@@ -156,13 +156,7 @@
     max-width:calc(var(--maxw) - 40px);
   }
   
-  .hero-left{
-    padding:30px 24px;
-    border-radius:18px;
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    backdrop-filter: blur(6px);
-    border:1px solid var(--glass-border);
-  }
+ 
   
   .eyebrow{
     font-size:13px;
@@ -186,7 +180,7 @@
   .typewriter{
     display:inline-block;
     color:var(--accent1);
-    border-right:3px solid rgba(255,255,255,0.12);
+    border-right:3px solid rgba(255, 255, 255, 0.12);
     padding-right:6px;
   }
   
@@ -588,6 +582,9 @@
 .nav-menu.active {
   display: flex;
 }
+
+
+
 
 
 

@@ -1,4 +1,6 @@
 const typeEl = document.getElementById('typewriter');
+typeEl.textContent = ""; // clear initial static text
+
 const words = ["Recommendation Engine","Internship Matcher","Career Accelerator"];
 let wIdx = 0, chIdx = 0, forward = true;
 function tick(){
